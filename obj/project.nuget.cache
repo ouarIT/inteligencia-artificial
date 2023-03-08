@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "lANcd6S12YQroM2SftlpufUYXYw3hB0m8czB2rwmPZXEpfN6AnZ1k5oPpThc4vkhdzF8MWd4v4RzxCBP/ksZbQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\173118\\IA1_T43B\\IA1_T43B.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\173118\\.nuget\\packages\\fsharp.core\\6.0.7\\fsharp.core.6.0.7.nupkg.sha512"
+  ],
+  "logs": []
+}
