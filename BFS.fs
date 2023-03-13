@@ -9,4 +9,6 @@ module BFS =
             remover = dequeue
         }
 
+    let key n = n.estado   
+
 

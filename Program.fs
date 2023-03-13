@@ -26,6 +26,11 @@ match Capitulo3.busquedaArbol costouniforme.estrategia (OchoCasillas.problema es
             printfn "solucion con CU: %A" sol
 | None -> printfn "no hay solucion con CU"
 
+//CON BUSQUEDA GRAFO
+match Capitulo3.busquedaGrafo BFS.key BFS.estrategia (OchoCasillas.problema estado) with
+| Some n -> let sol = Capitulo3.acciones n
+            printfn "solucion con BFS: %A" sol
+| None -> printfn "no hay solucion"
 
 
 
