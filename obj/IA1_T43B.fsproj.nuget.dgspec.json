@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\173118\\IA1_T43B\\IA1_T43B.fsproj": {}
+    "C:\\Users\\173118\\Documents\\GitHub\\inteligencia-artificial\\IA1_T43B.fsproj": {}
   },
   "projects": {
-    "C:\\Users\\173118\\IA1_T43B\\IA1_T43B.fsproj": {
+    "C:\\Users\\173118\\Documents\\GitHub\\inteligencia-artificial\\IA1_T43B.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\173118\\IA1_T43B\\IA1_T43B.fsproj",
+        "projectUniqueName": "C:\\Users\\173118\\Documents\\GitHub\\inteligencia-artificial\\IA1_T43B.fsproj",
         "projectName": "IA1_T43B",
-        "projectPath": "C:\\Users\\173118\\IA1_T43B\\IA1_T43B.fsproj",
+        "projectPath": "C:\\Users\\173118\\Documents\\GitHub\\inteligencia-artificial\\IA1_T43B.fsproj",
         "packagesPath": "C:\\Users\\173118\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\173118\\IA1_T43B\\obj\\",
+        "outputPath": "C:\\Users\\173118\\Documents\\GitHub\\inteligencia-artificial\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\173118\\AppData\\Roaming\\NuGet\\NuGet.Config"

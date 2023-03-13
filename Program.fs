@@ -1,6 +1,6 @@
 ﻿open busqueda
 
-let estado = [|1;2;3;4;6;0;7;5;8|]
+let estado = [1;2;3;4;6;0;7;5;8]
 
 match Capitulo3.busquedaArbol BFS.estrategia (OchoCasillas.problema estado) with
 | Some n -> let sol = Capitulo3.acciones n
