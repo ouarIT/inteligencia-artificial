@@ -3,38 +3,15 @@
 let estado = [3;6;0;4;2;8;5;7;1]
 
 
-match Capitulo3.busquedaArbol BFS.estrategia (OchoCasillas.problema estado) with
+match Capitulo3.busquedaGrafo
+    (astar.key OchoCasillas.h1)
+    (astar.estrategia OchoCasillas.h1)
+    (OchoCasillas.problema estado) with
 | Some n -> let sol = Capitulo3.acciones n
-            printfn "solucion con BFS: %A" sol
+            printfn "solucion con greedy: %A" sol
+            // show deepness
+            printfn "profundidad: %i" (List.length sol)
 | None -> printfn "no hay solucion"
-
-//CON DFSL Y LIMITADO 3
-let dip = 3
-match Capitulo3.busquedaArbol (DFSL.estrategia dip) (OchoCasillas.problema estado) with
-| Some n -> let sol = Capitulo3.acciones n
-            printfn "solucion con DFSL: %A" sol
-| None -> printfn "no hay solucion con profundidad %i" dip
-
-//CON IDS
-match IDS.IDS (OchoCasillas.problema estado) with
-| Some n -> let sol = Capitulo3.acciones n
-            printfn "solucion con IDS: %A" sol
-| None -> printfn "no hay solucion con IDS"
-
-//CON CU
-match Capitulo3.busquedaArbol costouniforme.estrategia (OchoCasillas.problema estado) with
-| Some n -> let sol = Capitulo3.acciones n
-            printfn "solucion con CU: %A" sol
-| None -> printfn "no hay solucion con CU"
-
-//CON BUSQUEDA GRAFO
-match Capitulo3.busquedaGrafo BFS.key BFS.estrategia (OchoCasillas.problema estado) with
-| Some n -> let sol = Capitulo3.acciones n
-            printfn "solucion con BFS: %A" sol
-| None -> printfn "no hay solucion"
-
-
-
 
 (*
 
