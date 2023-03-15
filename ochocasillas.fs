@@ -58,3 +58,7 @@ module OchoCasillas =
         meta = meta
         costo = costo
     }
+
+    let h1 nodo = 
+        List.zip estado_meta nodo.estado
+        |> List.sumBy (fun (x,y) -> if x <> y && x <> 0 then 1.0 else 0.0)

@@ -1,6 +1,7 @@
 ﻿open busqueda
 
-let estado = [1;2;3;4;6;0;7;5;8]
+let estado = [3;6;0;4;2;8;5;7;1]
+
 
 match Capitulo3.busquedaArbol BFS.estrategia (OchoCasillas.problema estado) with
 | Some n -> let sol = Capitulo3.acciones n
@@ -31,7 +32,6 @@ match Capitulo3.busquedaGrafo BFS.key BFS.estrategia (OchoCasillas.problema esta
 | Some n -> let sol = Capitulo3.acciones n
             printfn "solucion con BFS: %A" sol
 | None -> printfn "no hay solucion"
-
 
 
 

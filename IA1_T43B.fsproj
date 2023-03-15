@@ -12,6 +12,8 @@
     <Compile Include="DFS.fs" />
     <Compile Include="DFSL.fs" />
     <Compile Include="IDS.fs" />
+    <Compile Include="greedy.fs" />
+    <Compile Include="astar.fs" />
     <Compile Include="ochocasillas.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
