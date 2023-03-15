@@ -31,7 +31,7 @@ module OchoCasillas =
                         x
                 )
         match accion with
-        | Left -> if i % 2 <> 0
+        | Left -> if i % 3 <> 0
                     then Some (accion, swap i (i-1))
                     else None
         | Right -> if i % 3 <> 2
@@ -62,3 +62,6 @@ module OchoCasillas =
     let h1 nodo = 
         List.zip goal nodo.estado
         |> List.sumBy (fun (x,y) -> if x <> y && x <> 0 then 1.0 else 0.0)
+
+    // lets build h2 using manhattan distance
+    //let h2 nodo =

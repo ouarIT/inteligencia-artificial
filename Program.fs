@@ -1,6 +1,6 @@
 ﻿open busqueda
 
-let estado = [3;6;0;4;2;8;5;7;1]
+let estado = [1;2;4;0;5;3;7;8;6]
 
 
 match Capitulo3.busquedaGrafo
@@ -9,7 +9,6 @@ match Capitulo3.busquedaGrafo
     (OchoCasillas.problema estado) with
 | Some n -> let sol = Capitulo3.acciones n
             printfn "solucion con greedy: %A" sol
-            // show deepness
             printfn "profundidad: %i" (List.length sol)
 | None -> printfn "no hay solucion"
 
