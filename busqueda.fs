@@ -38,17 +38,19 @@ module Capitulo3 =
                 costo_ruta = padre.costo_ruta + problema.costo padre.estado a s
                 
             })
+    
+    let nodoInicial estado =
+        {
+            estado = estado
+            profundidad = 0
+            costo_ruta = 0.0
+            accion = None
+            padre = None 
+        }
 
 
     let busquedaArbol estrategia problema = 
-        let raiz =
-            {
-                estado = problema.inicio
-                profundidad = 0
-                costo_ruta = 0.0
-                accion = None
-                padre = None 
-            }
+        let raiz = nodoInicial problema.inicio
         let bolsa = estrategia.insertar estrategia.vacia raiz
 
         let rec loop bolsa =
@@ -64,14 +66,7 @@ module Capitulo3 =
         loop bolsa
 
     let busquedaGrafo key estrategia problema = 
-        let raiz =
-            {
-                estado = problema.inicio
-                profundidad = 0
-                costo_ruta = 0.0
-                accion = None
-                padre = None 
-            }
+        let raiz = nodoInicial problema.inicio
         let bolsa = estrategia.insertar estrategia.vacia raiz
 
         let rec loop (bolsa, procesados) =
@@ -94,3 +89,32 @@ module Capitulo3 =
         | Some a, Some p -> acciones p @ [a]
         | _ -> []
 
+module capitulo4 =
+    open System
+    open Capitulo3
+
+    let ascensionColina h problema =
+        let actual = nodoInicial problema.inicio
+        let rec loop actual =
+            let sucesores = expandir problema actual
+            let vecino = List.minBy h sucesores
+            if h vecino <= h actual then actual
+            else loop vecino
+        loop actual
+    
+    let recocidoSimulado seed h temperatura problema =
+        let actual = nodoInicial problema.inicio
+        let rnd = Random(seed)
+        let rec loop (t, actual) =
+            let T = temperatura t
+            if T = 0.0 
+            then actual
+            else
+                let sucesores = expandir problema actual
+                let i = rnd.Next(List.length sucesores)
+                let next = List.item i sucesores
+                let delta = h next - h actual
+                if delta <= 0.0 || rnd.NextDouble() <= exp(delta / T)
+                then loop (t + 1.0, next)
+                else loop (t + 1.0, actual)
+        loop (0.0, actual)
