@@ -102,6 +102,11 @@ module capitulo4 =
             else loop vecino
         loop actual
     
+    let temperatura T0 lamba t = 
+        let T = T0 * exp(-lamba * t)
+        if T < 1E-6 then 0.0
+        else T
+    
     let recocidoSimulado seed h temperatura problema =
         let actual = nodoInicial problema.inicio
         let rnd = Random(seed)
@@ -118,3 +123,5 @@ module capitulo4 =
                 then loop (t + 1.0, next)
                 else loop (t + 1.0, actual)
         loop (0.0, actual)
+
+    
