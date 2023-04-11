@@ -1,6 +1,12 @@
 ﻿open busqueda
 
-let estado = [1;2;4;0;5;3;7;8;6]
+let inicio = NReinas.inicio 4
+
+printfn "inicio = %A" inicio
+
+
+(*
+    let estado = [1;2;4;0;5;3;7;8;6]
 
 
 match Capitulo3.busquedaGrafo
@@ -11,6 +17,7 @@ match Capitulo3.busquedaGrafo
             printfn "solucion con greedy: %A" sol
             printfn "profundidad: %i" (List.length sol)
 | None -> printfn "no hay solucion"
+*)
 
 (*
 
