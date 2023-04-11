@@ -19,30 +19,7 @@ module OchoCasillas =
     let cero estado =
         List.findIndex (fun x -> x = 0) estado
 
-    let sucesor i accion (estado : estado) =
-        let swap i j =
-            estado
-            |> List.mapi (fun indx x ->
-                    if indx = i then
-                        List.item j estado
-                    elif indx = j then
-                        List.item i estado
-                    else 
-                        x
-                )
-        match accion with
-        | Left -> if i % 3 <> 0
-                    then Some (accion, swap i (i-1))
-                    else None
-        | Right -> if i % 3 <> 2
-                    then Some (accion, swap i (i+1))
-                    else None
-        | Up -> if i > 2
-                    then Some (accion, swap i (i-3))
-                    else None
-        | Down -> if i < 6
-                    then Some (accion, swap i (i+3))
-                    else None
+    
     let sucesores estado =
         let indice = cero estado
         [

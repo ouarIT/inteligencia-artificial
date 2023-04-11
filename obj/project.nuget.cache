@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "GUtnAPrDhYtzfSfWxz4OFrKqasI5wk9LWMpGQSIEF/60EnlqW+uzEw1jJQvmDhNfiq56MLwnuM93oabOLwiHCg==",
+  "dgSpecHash": "W14uRAY7M/9bL9fNFBmOQcoYN8Y331l87BeDY3xJ4569Szqjy6/iI7ZzoFHGGQ13BXSl552oWwoUFMvcF26UPw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\173118\\Documents\\GitHub\\inteligencia-artificial\\IA1_T43B.fsproj",
+  "projectFilePath": "C:\\Users\\ouarit\\Documents\\IA1\\inteligencia-artificial\\IA1_T43B.fsproj",
   "expectedPackageFiles": [
-    "C:\\Users\\173118\\.nuget\\packages\\fsharp.core\\6.0.7\\fsharp.core.6.0.7.nupkg.sha512"
+    "C:\\Users\\ouarit\\.nuget\\packages\\fsharp.core\\7.0.0\\fsharp.core.7.0.0.nupkg.sha512"
   ],
   "logs": []
 }

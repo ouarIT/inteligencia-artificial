@@ -1,116 +1,89 @@
 ﻿open busqueda
 
-let estado = [1;2;4;0;5;3;7;8;6]
+//definimos el estado inicial
+let caso1 = [
+    [0; 6; 0; 1; 0; 4; 0; 5; 0];
+    [0; 0; 8; 3; 0; 5; 6; 0; 0];
+    [2; 0; 0; 0; 0; 0; 0; 0; 1];
+    [8; 0; 0; 4; 0; 7; 0; 0; 6];
+    [0; 0; 6; 0; 0; 0; 3; 0; 0];
+    [7; 0; 0; 9; 0; 1; 0; 0; 4];
+    [5; 0; 0; 0; 0; 0; 0; 0; 2];
+    [0; 0; 7; 2; 0; 6; 9; 0; 0];
+    [0; 4; 0; 5; 0; 8; 0; 7; 0]
+]
 
+let caso2 = [
+    [0 ;0 ;0 ;0 ;0 ;4 ;9 ;0 ;0];
+    [0 ;0 ;5 ;3 ;2 ;0 ;0 ;0 ;0];
+    [2; 0; 0; 0; 0; 6; 0; 4; 0];
+    [8; 0; 4; 0; 0; 0; 0; 6; 0];
+    [0; 5; 0; 0; 6; 0; 0; 1; 0];
+    [0; 1; 0; 0; 0; 0; 3; 0; 9];
+    [0; 2; 0; 8; 0; 0; 0; 0; 6];
+    [0; 0; 0; 0; 7; 9; 1; 0; 0];
+    [0; 0; 9; 5; 0; 0; 0; 0; 0]
+]
 
-match Capitulo3.busquedaGrafo
-    (astar.key OchoCasillas.h1)
-    (astar.estrategia OchoCasillas.h1)
-    (OchoCasillas.problema estado) with
-| Some n -> let sol = Capitulo3.acciones n
-            printfn "solucion con greedy: %A" sol
-            printfn "profundidad: %i" (List.length sol)
-| None -> printfn "no hay solucion"
+let caso3 = [
+    [0; 0; 9; 0; 2; 8; 0; 0; 0];
+    [0; 8; 0; 0; 0; 0; 9; 0; 0];
+    [0; 7; 0; 0; 5; 0; 0; 0; 0];
+    [0; 3; 8; 9; 0; 0; 1; 0; 5];
+    [0; 0; 0; 0; 0; 0; 0; 0; 0];
+    [6; 0; 4; 0; 0; 5; 2; 9; 0];
+    [0; 0; 0; 0; 4; 0; 0; 6; 0];
+    [0; 0; 6; 0; 0; 0; 0; 3; 0];
+    [0; 0; 0; 7; 3; 0; 5; 0; 0]
+]
+let casoceros = [
+    [0;0;0;0;0;0;0;0;0];
+    [0;0;0;0;0;0;0;0;0];
+    [0;0;0;0;0;0;0;0;0];
+    [0;0;0;0;0;0;0;0;0];
+    [0;0;0;0;0;0;0;0;0];
+    [0;0;0;0;0;0;0;0;0];
+    [0;0;0;0;0;0;0;0;0];
+    [0;0;0;0;0;0;0;0;0];
+    [0;0;0;0;0;0;0;0;0];
+]
 
 (*
-
-
-
-// For more information see https://aka.ms/fsharp-console-apps
-printfn "Hello from F#"
-
-
-// circle area
-let circleArea r = 
-    System.Math.PI * r * r
-
-printf "area del ciruculo unitario = %f\n" (circleArea 1.0)
-
-
-let rec factorial n =
-    if n = 0 then 1
-    else n * factorial (n-1)
-
-printfn "factorial de %i = %i" 5 (factorial 5)
-
-let rec power = function
-    | (_, 0) -> 1.0
-    | (x,n) -> x * power (x, n-1)
-
-printfn "2^5 = %f" (power (2.0, 5))
-
-let g n = n+4
-printfn "g(5) = %i" (g 5)
-
-let h (x,y) = 
-    System.Math.Sqrt(x*x + y*y)
-
-printfn "h(3,4) = %f" (h (3.0, 4.0))
-
-let rec f n = 
-    if n = 0 then 0
-    else n + f(n-1)
-
-printfn "f(4) = %i" (f 4)
-
-
-
-let rec fib n = 
-    if n = 0 then 0
-    else if n = 1 then 1
-    else fib(n-1) + fib(n-2)
-
-printfn "fib(4) = %i" (fib 4)
-
-let rec sum m n =
-    if n = 0 then m
-    else m + n + sum (m) (n-1)
-
-printfn "sum(1,2) = %i" (sum 1 2)
-
-
-let rec length = function
-    | [] -> 0
-    | x::xs -> 1 + length xs
-
-printfn "length [1;2;3] = %i" (length [1;2;3])   
-
-let rec delete n  y =
-    match y with 
-    | [] -> []
-    | (x: 'a)::(xs: 'a list) -> if x = n then delete n xs else x::delete n xs
-    
-let rec delete' n  y =
-    match y with 
-    | [] -> []
-    | (x: 'a)::(xs: 'a list) -> if x = n then xs else x::delete' n xs
-
-
-printfn "delete 5 [1;2;3;5;4] = %A" (delete 5 [1;2;3;5;4])
-
-let rec append list1 list2 =
-    match list1 with
-    | [] -> list2
-    | x::xs -> x::append xs list2
-
-printfn "append [1;2;3] [4;5;6] = %A" (append [1;2;3] [4;5])
-
-let rec exists p = function
-    | [] -> false
-    | x::xs -> p x || exists p xs
-
-printfn "exists (fun x -> x = 5) [1;2;3;5;4] = %A" (exists (fun x -> x = 5) [1;2;3;5;4])
-
-let rec forall p = function
-    | [] -> true
-    | x::xs -> p x && forall p xs
-printfn "forall (fun x -> x > 0) [1;2;3;5;4] = %A" (forall (fun x -> x > 0) [1;2;3;5;4])
-
-// map : ('a -> 'b) -> 'a list -> 'b list
-let rec map f = function
-    | [] -> []
-    | x::xs -> f x :: map f xs
-
-printfn "map (fun x -> x + 1) [1;2;3;5;4] = %A" (map (fun x -> x + 1) [1;2;3;5;4])
-
+let rec Newton_Raphson N k b =
+    let f = pown b (k+1) + b* (1.0-float(N)) - 1.0
+    let f' = (k+1)*(pown b k) + 1.0 - 1.0
+    let b' = b - f/f'
+    if abs(b-b') < 0.0001 then 
+        b' 
+    else 
+        Newton_Raphson N K b'
 *)
+
+
+let imprimeEstado (estado:List<List<int>>) =
+    for i = 0 to 8 do
+        for j = 0 to 8 do
+            printf "%A " estado.[i].[j]
+        printfn ""
+
+let formato_salida estado dfs_o_ids =
+    printfn "Estado inicial:"
+    imprimeEstado estado
+    printfn "Estado final:"
+    if dfs_o_ids =  0 then
+        let t0 = System.DateTime.UtcNow
+        match Capitulo3.busquedaArbol DFS.estrategia (Sudoku.problema estado) with
+        | Some n -> imprimeEstado n.estado
+        | None -> printfn "No hay solucion"
+        let t1 = System.DateTime.UtcNow
+        printfn "Tiempo transcurrido con DFS: %A segundos" (t1 - t0).TotalSeconds
+    else
+        let t2 = System.DateTime.UtcNow
+        match IDS.IDS (Sudoku.problema estado) with
+        | Some n -> imprimeEstado n.estado
+        | None -> printfn "No hay solucion"
+        let t3 = System.DateTime.UtcNow
+        // muestra el resultado en segundos
+        printfn "Tiempo transcurrido con IDS: %A segundos" (t3 - t2).TotalSeconds
+
+formato_salida casoceros 0

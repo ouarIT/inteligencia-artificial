@@ -1,26 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\173118\\Documents\\GitHub\\inteligencia-artificial\\IA1_T43B.fsproj": {}
+    "C:\\Users\\ouarit\\Documents\\IA1\\inteligencia-artificial\\IA1_T43B.fsproj": {}
   },
   "projects": {
-    "C:\\Users\\173118\\Documents\\GitHub\\inteligencia-artificial\\IA1_T43B.fsproj": {
+    "C:\\Users\\ouarit\\Documents\\IA1\\inteligencia-artificial\\IA1_T43B.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\173118\\Documents\\GitHub\\inteligencia-artificial\\IA1_T43B.fsproj",
+        "projectUniqueName": "C:\\Users\\ouarit\\Documents\\IA1\\inteligencia-artificial\\IA1_T43B.fsproj",
         "projectName": "IA1_T43B",
-        "projectPath": "C:\\Users\\173118\\Documents\\GitHub\\inteligencia-artificial\\IA1_T43B.fsproj",
-        "packagesPath": "C:\\Users\\173118\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\173118\\Documents\\GitHub\\inteligencia-artificial\\obj\\",
+        "projectPath": "C:\\Users\\ouarit\\Documents\\IA1\\inteligencia-artificial\\IA1_T43B.fsproj",
+        "packagesPath": "C:\\Users\\ouarit\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ouarit\\Documents\\IA1\\inteligencia-artificial\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\173118\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\ouarit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files\\dotnet\\sdk\\6.0.405\\FSharp\\library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.101\\FSharp\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -37,7 +39,7 @@
             "FSharp.Core": {
               "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
               "target": "Package",
-              "version": "[6.0.7, )",
+              "version": "[7.0.0, )",
               "generatePathProperty": true
             }
           },
@@ -57,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

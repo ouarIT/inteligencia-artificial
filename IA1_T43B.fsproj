@@ -7,14 +7,11 @@
     <Compile Include="pilas.fs" />
     <Compile Include="colas.fs" />
     <Compile Include="busqueda.fs" />
-    <Compile Include="CU.fs" />
-    <Compile Include="BFS.fs" />
     <Compile Include="DFS.fs" />
-    <Compile Include="DFSL.fs" />
-    <Compile Include="IDS.fs" />
-    <Compile Include="greedy.fs" />
-    <Compile Include="astar.fs" />
-    <Compile Include="ochocasillas.fs" />
+    <Compile Include="DFSL.fs"/>
+    <Compile Include="IDS.fs"/>
+    <Compile Include="BFS.fs" />
+    <Compile Include="sudoku.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 </Project>
